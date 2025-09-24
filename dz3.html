@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+        td {
+            border: 1px solid #000;
+            padding: 5px;
+            text-align: center;
+        }
+        .random-numbers {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+        <h2>Таблица умножения</h2>
+    <table id="multiplication-table"></table>
+
+    <h2>Три случайных числа:</h2>
+    <p id="random-numbers"></p>
+
+    <script>
+        // Создаем таблицу умножения
+        var table = document.getElementById('multiplication-table');
+        
+        for(var i = 1; i <= 10; i++) {
+            var row = document.createElement('tr');
+            
+            // Заполняем результаты умножения
+            for(var j = 1; j <= 10; j++) {
+                var cell = document.createElement('td');
+                cell.innerHTML = i * j;
+                row.appendChild(cell);
+            }
+            
+            table.appendChild(row);
+        }
+
+        
+        // Генерируем случайные числа
+        var randomNumbers = [];
+        var result = document.getElementById('random-numbers');
+        
+        for(var i = 0; i < 3; i++) {
+            var num = Math.floor(Math.random() * 101);
+            
+            // Проверяем уникальность
+            while(randomNumbers.includes(num)) {
+                num = Math.floor(Math.random() * 101);
+            }
+            randomNumbers.push(num);
+        }
+        
+        result.innerHTML = randomNumbers.join(', ');
+    </script>
+</body>
+</html>
