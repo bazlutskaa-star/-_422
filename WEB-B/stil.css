@@ -1,0 +1,77 @@
+body {
+ font-family: "M PLUS Rounded 1c", sans-serif;
+ font-weight: 900;
+ font-style: normal;
+ background: #a183a7;                /* Тёмный фон страницы */
+}
+
+/* Анимация добавления элемента */
+@keyframes slideIn {
+ from { transform: translateY(-10px); opacity: 0; }
+ to { transform: translateY(0); opacity: 1; }
+}
+
+/* Применение анимации */
+ul#orders li {
+ animation: slideIn 0.3s ease-out;
+  display: flex;
+  width: 300px; /* Фиксированная ширина */
+  padding: 15px;
+  background: #c2b0d6;
+  border-radius: 6px;
+  box-shadow: 0 2px 3px rgb(24, 5, 49);
+  
+}
+
+/* Эффект при наведении */
+ul#orders li:hover {
+ transform: translateX(5px);
+ transition: transform 0.2s;
+}
+
+/* Эффект для чекбокса */
+input[type="checkbox"]:checked {
+ transform: scale(1.1);
+ transition: all 0.2s;
+ margin-left: auto;
+ accent-color: #7a21a3;
+ cursor: pointer;                    /* Курсор-указатель */
+ 
+}
+
+ /* располагает поле ввода и кнопку в одну линию */
+form {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  padding: 12px 25px;                 /* Размер кнопки */
+  background: #46328b;                /* Синий цвет фона */
+  color: white;                       /* Белый текст */
+  border: none;                       /* Убираем стандартную рамку */
+  border-radius: 6px;
+}
+
+#name {
+  padding: 12px;                      /* Внутренние отступы */
+  border: 2px solid #e0e0e0;          /* Серая рамка */
+  border-radius: 8px;                 /* Закругление углов */
+  
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Элементы в колонку */
+    align-items: center;    /* Центр по горизонтали */
+    justify-content: center; /* Центр по вертикали (если нужно) */
+    gap: 15px;              /* Отступ между элементами */
+    width: 100%;            /* На всю доступную ширину */
+    margin: 0 auto;         /* Авто-отступы по бокам */
+    padding: 20px;
+    text-align: center; 
+
+}
+
+
+

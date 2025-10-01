@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@900&display=swap">
+
+    <link rel="stylesheet" href="stil.css">
+</head>
+<body>
+    <div class="container">
+    <form>
+        <label for="name">Имя кота</label> <br/>
+        <input 
+            type="text" 
+            placeholder="имя"
+            id="name"> <br/>
+
+        <button type="button" onclick="add()">Добавить</button>    
+    </form>
+
+        <ul id="orders"></ul>   
+
+    <script>
+    function add() {
+        const input = document.getElementById('name');
+        const list = document.getElementById('orders');
+
+        if (input.value.trim()) {
+        const newItem = document.createElement('li');
+        newItem.textContent = input.value;
+
+         // Добавляем чекбокс
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        newItem.appendChild(checkbox);
+ 
+        list.appendChild(newItem);
+        input.value = ''; // Очищаем поле
+        }
+    }
+    </script>
+    </div>
+</body>
+</html>
