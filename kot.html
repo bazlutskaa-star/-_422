@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@900&display=swap">
+
+    <link rel="stylesheet" href="stil.css">
+</head>
+<body>
+    <div class="container">
+    <form>
+        <label for="name">Имя кота</label> <br/>
+        <input 
+            type="text" 
+            placeholder="имя"
+            id="name"> <br/>
+
+        <button id="add" type="button">Добавить</button>    
+    </form>
+
+        <ul id="orders">
+            <li type="checkbox">Волшебник</li>
+        </ul>   
+
+    <script>
+        let nameInput = document.getElementById('name') 
+        let addBtn = document.getElementById('add')
+        let orderList = document.getElementById('orders')
+
+        addBtn.addEventListener('click', add);
+        
+        let List =[]
+
+        function add() {
+            // console.log(nameInput.value)
+
+            List.push(nameInput.value);
+
+            addToHTML(nameInput.value)
+
+            console.log[List];
+        
+
+        }
+
+        function addToHTML(name) {
+
+            const li = document.createElement('li');
+
+            li.innerHTML =`
+                    <span>${name}</span>
+                    <button type="button" class="delete-btn">X</button>
+            `;
+
+            li.querySelector('.delete-btn').addEventListener('click', function() {
+                li.remove();
+
+            })
+
+            orderList.appendChild(li);
+
+
+        }
+
+    </script>
+    </div>
+</body>
+</html>
